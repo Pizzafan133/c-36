@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    <script src="p5.play.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBwHTPzI3gnNVOpFHughRd1yUwr0iqLGak",
+    authDomain: "virtualpet-57619.firebaseapp.com",
+    projectId: "virtualpet-57619",
+    storageBucket: "virtualpet-57619.appspot.com",
+    messagingSenderId: "78888273145",
+    appId: "1:78888273145:web:c8e157f513091061c4ce28"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<section class="portlet grid_6 leading"> 
+  <header>
+  <h2>Time<span id="time_span"></span></h2>
+  </header>
+  <script type="text/javascript">
+  var currentTime = new Date()
+  var hours = currentTime.getHours()
+  var minutes = currentTime.getMinutes()
+  if (minutes < 10){
+      minutes = "0" + minutes
+  }
+  var t_str = hours + ":" + minutes + " ";
+  if(hours > 11){
+      t_str += "PM";
+  } else {
+     t_str += "AM";
+  }
+  document.getElementById('time_span').innerHTML = t_str;
+  </script>
+  </section>
+
+  
+    <script src="Food.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+      <script src="sketch.js"></script>
+</body></html>
